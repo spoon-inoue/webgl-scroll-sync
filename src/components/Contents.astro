@@ -1,0 +1,35 @@
+---
+import Card from './Card.astro'
+
+const datas: { path: string; aspect: number; title: string }[] = [
+  { path: 'assets/unsplash1.webp', aspect: 4000 / 2250, title: 'Image 1 by Unsplash' },
+  { path: 'assets/unsplash2.webp', aspect: 4000 / 5045, title: 'Image 2 by Unsplash' },
+  { path: 'assets/unsplash3.webp', aspect: 4000 / 5333, title: 'Image 3 by Unsplash' },
+  { path: 'assets/unsplash4.webp', aspect: 4000 / 4000, title: 'Image 4 by Unsplash' },
+]
+---
+
+<div class="contents">
+  <ul>
+    {datas.map((data) => <Card data={data} />)}
+  </ul>
+</div>
+
+<style lang="scss" is:global>
+  .contents {
+    display: block;
+    padding-block: 10rem;
+    padding-inline: 10rem;
+
+    ul {
+      .card {
+        + .card {
+          margin-top: 30rem;
+        }
+        &:nth-child(2n) {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+</style>

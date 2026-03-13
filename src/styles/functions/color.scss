@@ -1,0 +1,7 @@
+$foreground: #b18f47;
+$dark: #101b1d;
+$light: #f6f2e7;
+
+@function transparent($color, $transparent: 0%) {
+  @return color-mix(in srgb, $color, transparent $transparent);
+}

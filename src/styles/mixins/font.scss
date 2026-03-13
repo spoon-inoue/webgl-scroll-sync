@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'BarlowCondensed';
+  src: url('src/assets/font/BarlowCondensed-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('src/assets/font/Roboto-VariableFont_wdth,wght.ttf');
+}
+
+@mixin barlow {
+  font-family: 'BarlowCondensed';
+}
+
+@mixin roboto($wght: 400) {
+  font-family: 'Roboto';
+  font-variation-settings: 'wght' $wght;
+}
