@@ -16,7 +16,7 @@ export class GLCanvas {
     this.display = new Display(this.renderer)
 
     this.disconnectResizeObserver = this.resize()
-    this.unsubscribeAnimationLoop = Tempus.add(this.render.bind(this), { priority: 1 })
+    this.unsubscribeAnimationLoop = Tempus.add(this.render.bind(this))
   }
 
   private createRenderer(canvas: HTMLCanvasElement) {
